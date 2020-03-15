@@ -1,300 +1,288 @@
 <html>
-<html lang="en">
-
-
-<!--  Things to Add 
- OnClick smooth scroll
- zoom in images  
-project heading ko accha kr-->
-
 <head>
-
 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aditya Datta</title>
-	<style type="text/css">
-
-		html {
-		  scroll-behavior: smooth;
+    <style type="text/css">
+        html {
+		    scroll-behavior: smooth;
 		}
 
-		#overlay{
-		  position:fixed;
-		  z-index:99998;
-		  top:0;
-		  left:0;
-		  bottom:0;
-		  right:0;
-		  background:rgba(0,0,0,1);
-		}
+        body{
+            overflow-x: hidden;
+            margin: 0px;
+            text-align:center;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
 
+        .navbar{
+			background-color:  black;
+			position: fixed;
+			color: white;
+			height: 20px;
+			width: 100%;
+			float: left;
+            text-align: center;
+            z-index: 100;
+        }
 
-		#loader2 {
-			position:fixed;
-			z-index:99998;
-			top:0;
-			left:0;
-			bottom:0;
-			right:0;
-			margin: auto;
-			border-radius: 100%;
-			border-left: 28px solid green;
-			border-top: 28px solid white;
-			border-right: 28px solid green;
-			border-bottom: 28px solid white;
-			width: 160px;
-			height: 160px;
-			-webkit-animation: spin 2s linear infinite;
-			animation: spin 2.5s linear infinite;
-		}
+        .buttons{
+            transform: translateY(0px);
+			position: fixed;
+            z-index: 101;
+            right: 0px;
+        }
 
-		.loader {
-		  border-radius: 100%;
-		  border-left: 28px solid none;
-		  border-top: 28px solid none;
-		  border-right: 28px solid none;
-		  border-bottom: 16px solid white;
-		  width: 120px;
-		  height: 120px;
-		  -webkit-animation: spin 2s linear infinite;
-		  animation: spin 3.5s linear infinite;
+        .buttons1{
+            box-shadow: 0 0 3px black;
+            background-color:  #009900; 
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-family: 'Abel';
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            float: right;
+            cursor: pointer;
+            transition-duration: 0.1s;
+        }
+
+        .buttons1:hover{
+            background-color: #00cc00;
+        }
+        .container{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .header1{
+            background-image: url("wp.png");
+			height: 400px;
+			background-attachment: fixed;
+  			background-position: center;
+ 			background-repeat: no-repeat;
+  			background-size: cover;
+            position: relative;
+        }
+        .name{
+            color:black;
+        }
+        .header2{
+            z-index: 2;
+            transform: translateY(-250px);
+            font-family: 'Impact';
+			font-size: 72px;
+			color:black;
+  			cursor: default;
+            position: relative;
+        }
+
+        .headImg{
+            transform: translateY(10px);    
+        }
+
+        .header34{
+            transform: translateY(-59px);
+  			cursor: default;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header3{
+            opacity: 0.70;
+			height: 30px;
+			background-image: url("wp.png");
+			background-attachment: fixed;
+  			background-position: center;
+ 			background-repeat: no-repeat;
+  			background-size: cover;
+            transform: translateY(-180px);
+        }
+
+        .header4{
+            width: 80%;
+			color: white;
+			font-size: 18px;
+            font-family: 'Abel';
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto; 
+            text-shadow: 0 0 1.2px black;
+            transform: translateY(-27px);
+            transform: translateY(-207px);
+        }
+        .loaderDiv{
+            transform: translateY(-520px);
+        }
+        .loader {
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto; 
+            border-radius: 100%;
+            border-left: 28px solid none;
+            border-bottom: 28px solid none;
+            border-right: 28px solid none;
+            border-top: 16px solid white;
+            width: 520px;
+            height: 520px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 3.5s linear infinite;
 		}
 
 		@-webkit-keyframes spin {
-		  0% { -webkit-transform: rotate(0deg); }
-		  100% { -webkit-transform: rotate(360deg); }
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
 		}
 
 		@keyframes spin {
-		  0% { transform: rotate(0deg); }
-		  100% { transform: rotate(360deg); }
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg); }
 		}
 
-		.Heading{
-			text-shadow: 0 0 6px black;
-			position: fixed;
-			color: white;
-			height: 26px;
-			top:-2;
-			right: 0;
-			width: 100%;
-			font-size: 26px;
-			font-family: Impact;
-			text-align: left;
-			background-color:  black;
-			z-index: 100;
-		}
-
-		.button2{
-		  box-shadow: 0 0 3px black;
-		  background-color:  #009900; 
-		  border: none;
-		  color: white;
-		  padding: 15px 32px;
-		  font-family: 'Abel';
-		  text-align: center;
-		  text-decoration: none;
-		  display: inline-block;
-		  font-size: 16px;
-		  cursor: pointer;
-		  float: right;
-		  transition-duration: 0.4s;
-		  border-radius: 2px;
-		}
-		
-		.button2:hover {
-		  background-color: #00cc00;
-		}
-
-		.bodiness{
-			background-image: url("wp13.png");
-			font-family: 'impact';
-			font-size: 80px;
-			text-align: center;
-			color:black;
-			background-attachment: fixed;
-			height: 390px;
-  			background-position: center;
- 			background-repeat: no-repeat;
-  			background-size: cover;
-  			cursor: default;
-
-		}
-
-		#head{
-			position: relative;
-
-		}
-
-		.bodiness2{
-			opacity: 0.75;
-			background-image: url("wp13.png");
-			background-attachment: fixed;
-			height: 30px;
-			font-size: 16px;
-			color: black;
-  			background-position: center;
- 			background-repeat: no-repeat;
-  			background-size: cover;
-  			border-bottom-right-radius: 8px;
-  			border-bottom-left-radius: 	8px;
-
-
-
-		}
-		.marq{
-			z-index: 2;
-			font-size: 18px;
-			color:white;
-			font-family: 'Abel';
-			text-shadow: 0 0 3px black;
-			font-style: bold;
-			cursor: default;
-
-		}	
-
-		.bodiness3{
-			border-top-left-radius: 10px;
-			border-top-right-radius: 10px;
-			background-image: url("wp13.png");
-			text-align: center;
-			background-attachment: fixed;
-			height: 200px;
-			font-family: Impact;
-			font-size: 16px;
-			color: white;
-  			background-position: center;
- 			background-repeat: no-repeat;
-  			background-size: cover;
-		    border-radius: 0px;
-		    cursor: default;
-
-
-		}
-
-		.bodiness35{
-			opacity: 0.8;
-			background-image: url("wp13.png");
-			background-attachment: fixed;
-			height: 55px;
-  			background-position: center;
- 			background-repeat: no-repeat;
-  			background-size: cover;
-		    border-radius: 3px;
-		    position: relative;
-		    top :100px;
-		}
-
-		.button1{
-			color: white;
-			border-radius: 10px;
-			font-size: 18px;
-			font-family: 'Abel';
-			background-color:  #009900;
-			padding: 5px;
-			padding-right: 40px;
-			padding-left: 40px;
-			border: 2px solid white;
-		  	cursor: pointer;
-		  	transition-duration: 0.2s;
-		}
-
-		.button1:hover{
-			background-color:  #00cc00;
-			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-			
-		}
-
-		.projects {
-		  background-color: #ccc;
-		  font-family: 'Abel';
-		  text-align: left;
-		  width: 90%;
-		  height: 120px;
-		  font-size: 18px;
-		  transition-duration: 0.4s;
-		  border-radius: 3px;
-		  overflow-y: visible;
-		}
-
-		.projectsEven {
-		  background-color:  #80ffff;
-		  font-family: 'Abel';
-		  text-align: left;
-		  width: 75%;
-		  height: 120px;
-		  font-size: 18px;
-		  overflow-y: visible;
-		  transition-duration: 0.4s;
-		  border-radius: 3px;
-		}
-
-		
-
-		.projects:hover{
-			background-color:  #8c8c8c;
-			cursor: pointer;
-			width: 100%;
-		  	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-		}
-
-		.projectsEven:hover{
-			background-color:   #00cccc;
-			cursor: pointer;
-			width: 100%;
-		    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-		}
-
-		.bodiness4{
-			opacity: 0.8;
-			background-image: url("wp13.png");
-			background-attachment: fixed;
-			height: 55px;
-  			background-position: center;
- 			background-repeat: no-repeat;
-  			background-size: cover;
-		    border-radius: 3px;
-		}
-
-
-        .botn1{
-        	zoom:0.7;
-            background-color: #ffffff;
-            height: 30px;
-            width: 30px;
-            border-radius: 20px;
+        .header5{
+            transform: translateY(-760px);
             position: relative;
-            top:-184;
-            float: right;
-            right: 80;
-            transition-duration: 0.6s;
-            box-shadow: black;
-            border: 1px solid #000;
-            z-index: 4;
+			background-image: url("wp.png");
+			text-align: center;
+			height: 150px;
+			font-family: Impact;
+			font-size: 16px;
+			color: white;
+  			background-position: center;
+ 			background-repeat: no-repeat;
+  			background-size: cover;
+		    cursor: default;
+            border-top: 1px solid black;
+        }
+        .buttons2{
+            border: 1px solid black;
+            background-color:  #009900; 
+            color: white;
+            padding: 12px 30px;
+            font-family: 'Abel';
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            margin: -1.5px;
             cursor: pointer;
+            transition-duration: 0.1s;
         }
 
-        .practise{
-                background-color: black;
-                width: 60px;
-                height: 30px;
-                float: right;
-                border-radius: 20px;
-                position: relative;
-                top: -133;
-                z-index: 3;
-                cursor: pointer;
-            }
+        .buttons2:hover{
+            background-color: #00cc00;
+        }
 
-		.bodiness5{
-			background-color: #ccc;
+        .projectsHeading1{
+            transform: translateY(-600px);
+            opacity: 0.8;
+			background-image: url("wp.png");
+			height: 45px;
+  			background-position: center;
+ 			background-repeat: no-repeat;
+  			background-size: cover;
+		    position: relative;
+        }
+
+        .projectsHeading2{
+            transform: translateY(-680px);
+  			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 65px;
+		    position: relative;
+        }
+
+        .projectsDiv{
+            transform: translateY(-730px);
+            zoom: 0.92;
+        }
+        .projectsTitle{
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .projectsOdd{
+            margin-top: 25px;
+            background-color: #ccc;
+            font-family: 'Abel';
+            text-align: left;
+            width: 90%;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            padding: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .projectsOdd:hover{
+            background-color:  #aaa;
+			cursor: pointer;
+			width: 97.54%;
+        }
+
+        .projectsOddImg{
+            float: right;
+            transform: translateY(-110px) translateX(9.6px);
+            position: relative;
+            border: 1px solid black; 
+        }
+
+        .projectsEven{
+            position: relative;
+            margin-top: 25px;
+            background-color:  #80ffff;
+            font-family: 'Abel';
+            text-align: left;
+            width: 78%;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            padding: 10px;
+            padding-left: 20px;
+        }
+
+        .projectsEven:hover{
+			background-color:#00cccc;
+			cursor: pointer;
+			width: 97.54%;
+		}
+
+        .projectsEvenImg{
+            float: left;
+            transform: translateY(-37px) translateX(-20px);
+            position: relative;
+            margin-right: -15px;
+        }
+
+        .ts{
+            transform: translateY(100px);
+        }
+
+        .tsHeading1{
+            transform: translateY(-600px);
+            opacity: 0.8;
+			background-image: url("wp.png");
+			height: 45px;
+  			background-position: center;
+ 			background-repeat: no-repeat;
+  			background-size: cover;
+		    position: relative;
+        }
+
+        .tsHeading2{
+            width: 100%;
+            display: inline-block;
+            transform: translateY(-674px);
+  			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 65px;
+		    position: relative;
+        }
+
+        .tsBackGround{
+            background-color: #ccc;
+            transform: translateY(-670px);
 			font-family: 'Abel';
 			background-attachment: fixed;
 			height: 350px;
@@ -302,341 +290,251 @@ project heading ko accha kr-->
  			background-repeat: no-repeat;
   			background-size: cover;
 		    border-radius: 3px;
+        }
+        .tsColumnsContainer{
+            transform: translateY(10%);
+        }
 
-
-		}
-
-		.pInfoColumn{
-			display: inline-block;
+        .column1{
+            margin: 0px;
+            border-radius: 10px;
+            width: 29%;
+            height: 500px;
+            display: inline-block;
 			background-color: white;
 			box-shadow: 0 0 3px black;
 			position: relative;
 			overflow: hidden;
-			opacity: 1;
 			text-align: justify;
-			top: -70;
 			font-size: 20px;
-			width: 23%;
-			height: 500px;
-			margin-left: 24px;
-			border-radius: 10px;
-			padding: 5px;
 			cursor: default;
-		}
+            transition-duration: 0.6s;
+        }
 
-		.pInfoColumn:hover{
-			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.19);
-			transition-duration: 0.8s;
-
-		}
-
-		.pInfoImg{
-			display: inline-block;
-			height: 504px;
-			border-radius: 10px;
-			transition-duration: 0.6s;
+        .column2{
+            border-radius: 10px;
+            width: 29%;
+            height: 500px;
+            display: inline-block;
+			background-color: white;
+			box-shadow: 0 0 3px black;
 			position: relative;
-			right: 5;
-			top:-10;
-		}
+			overflow: hidden;
+			text-align: justify;
+			font-size: 20px;
+			cursor: default;
+            margin-right: 1%;
+            margin-left: 1%;
+            transition-duration: 0.6s;
+        }
 
-		.pInfoColumn:hover .pInfoTitle{
-			background-color:  #00cc00;
-			transition-duration: 0.6s;
-			
-		}
-
-		.pInfoTitle{
-			text-align: center;
-			color: white;
-			font-size: 24px;
-			font-family: Impact;
-			width: 110%;
-			left: -14;
+        .column3{
+            border-radius: 10px;
+            width: 29%;
+            height: 500px;
+            display: inline-block;
+			background-color: white;
+			box-shadow: 0 0 3px black;
 			position: relative;
-			top: -28;
-			background-color:  #009900;
-		}
+			overflow: hidden;
+			text-align: justify;
+			font-size: 20px;
+			cursor: default;
+            transition-duration: 0.6s;
+        }
 
-		.contact{
-			position: relative;
+        .column1:hover .column1Heading{
+            background-color: #00cc00;
+        }
 
-			margin-left: auto;
-			top: 10;
-			margin-right: auto;
-			background-color: #ddd;
-			/*
-			background-image: url("wp13.png");
-			background-attachment: fixed;
-  			background-position: center;
- 			background-repeat: no-repeat;
-  			background-size: cover;*/
-			height: 380px;
-			border-top-left-radius: 15px;
-			border-top-right-radius: 15px;
-		}
-		.card {
-		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
-		  max-width: 300px;
-		  margin-left: 47;
-		  background-color: white;
-		  border-radius: 2px;
-		  text-align: center;
-		  font-family: 'Abel';
-		  z-index: 6;
-		}
+        .column2:hover .column2Heading{
+            background-color: #00cc00;
+        }
+        
+        .column3:hover .column3Heading{
+            background-color: #00cc00;
+        }
+        
+        .column1Img{
+            height: 475px;
+            transition-duration: 0.6s;
+        }
 
-		.title {
-		  color: grey;
-		  font-size: 26px;
-		  position: relative;
-		  top: -10;
-		  z-index: 5;
-		}
-		
-		a{
-			text-decoration: none;
-			color: black;
-		}
+        .column1:hover .column1Img{
+            height: 200px;
+            
+        }
+        .column2Img{
+            height: 475px;
+            transition-duration: 0.6s;
+        }
 
-	</style>
+        .column2:hover .column2Img{
+            height: 200px;
+            
+        }
+        .column3Img{
+            height: 475px;
+            transition-duration: 0.6s;
+        }
+        .column3:hover .column3Img{
+            height: 200px;
+            
+        }
+        .column1Heading{
+            text-align: center;
+            display: block;
+            color: white;
+            background-color: #009900;
+            transition-duration: 0.6s;
+            border-top: 1px solid black;
+        }
+        .column2Heading{
+            text-align: center;
+            display: block;
+            color: white;
+            background-color: #009900;
+            transition-duration: 0.6s;
+            border-top: 1px solid black;
+        }
+        .column3Heading{
+            text-align: center;
+            display: block;
+            color: white;
+            background-color: #009900;
+            transition-duration: 0.6s;
+            border-top: 1px solid black;
+        }
+        @media screen and (max-width: 1000px) {
+            .container{
+                width: 100%;
+            }
 
-	<script type="text/javascript">
-		function func0(){
-				setTimeout(function(){
-				document.getElementById('overlay').style.display = 'none';
-				document.getElementById('loader2').style.display = 'none';
-			},1400);
-		}
+            .projectsOdd{
+			    width: 96.8%;
+                margin-top: 20px;
+            }
+            .projectsOdd:hover{
+                width: 96.8%;
+            }
 
+            .projectsEven{
+			    width: 96.8%;
+                margin-top: 20px;
+            }
+            .projectsEven:hover{
+                width: 96.8%;
+            }
+            .projectsOddImg{
+                display: none;
+            }
 
-		var status = 0;
-		function func1(){
-            if(status =='0')
-            {
-                document.getElementById('botn1').style.right = 36;
-                status += parseInt(1);
-                document.getElementById('botn1').style.backgroundColor = '#00cc00';
-
-
-                var x = document.getElementsByClassName('pInfoImg');
-                for(var i=0;i<x.length;i++)
-                {
-                	x[i].style.height = 180;
-                }
-
-
-             }
-            else
-            {
-                document.getElementById('botn1').style.right = 80;
-                status -= parseInt(1);
-                document.getElementById('botn1').style.backgroundColor = '#ffffff';
-                var x = document.getElementsByClassName('pInfoImg');
-                for(var i=0;i<x.length;i++)
-                {
-                	x[i].style.height = 504;
-                }
+            .projectsEvenImg{
+                display: none;
+            }
+        } 
+        @media screen and (min-width: 1000px) {
+            #knnTitle{
+                transform: translateX(-234px);
             }
         }
 
-        function func2(z){
-        	if(status == 0)
-        	{
-        		var x = document.getElementsByClassName('pInfoImg');
-                x[z].style.height = 180;
-
-        	}
-        }
-        function func3(z){
-        	if(status == 0)
-        	{
-        		var x = document.getElementsByClassName('pInfoImg');
-                x[z].style.height = 504;
-           
-
-        	}
+        @media screen and (max-width: 600px) {
+            .tsHeading2{
+                font-size: 50px;
+            }
+            .projectsHeading2{
+                font-size: 50px;
+            }
         }
 
 
-
-
-	</script>
-
-
+    </style>
 </head>
 
-<body style="zoom:0.90" onload="func0()">
-<div id="overlay"> </div>
-<div id='loader2' ></div>
-
-<div style="min-width:1224px;max-width: 1340px; margin-left: auto;margin-right: auto;">
-	<div class="Heading" style="cursor: default;">
-			
-	  		<button class="button2" onclick="window.location.href ='#contact'">C<small>ONTACT</small></button>
-	  		<button class="button2" onclick="window.location.href = '#pInfo';";>T<small>ECHINICAL</small> I<small>NFO</small></button>
-	  		<button class="button2" onclick="window.location.href = '#projects';">P<small>ROJECTS</small></button>
-	</div>
-
-	
-    <div class="bodiness" ><br>
-    	<div style="position: relative;"> <img id="head" height ="160px" src="head2.png" style="position: relative;top:40; ;z-index: 2" ><br>
-    	<span style="position: relative;top:25; ;color: black;z-index: 2">A<small>DITYA</small> <small style="position: relative; z-index: 2">DATT</small>A</span> <br>
-    	<span style="font-size:18px; font-family: 'Abel'; position: relative;top: 37;color: white;text-shadow: 0 0 1px black;z-index: 3"><b>WebDeveloper, Competitive Coder</b></span></div>
-    	<div class="loader" style="position: relative;top: -200;margin-right: auto;margin-left: auto;height: 550;width: 550;z-index: 0"></div>
-	</div>
-
-	
-	<div class="bodiness2" style="position: relative; z-index: 2">
-	<div class="marq"></div>
-	</div><br><br>
-	
-	<div class="bodiness3" style="position: relative; z-index: 2">
-		<br><br><button class="button1" onclick="window.location.href = 'https://www.hackerearth.com/@aditya2132';">H<small>ACKER</small> E<small>ARTH</small></button>
-		&nbsp &nbsp &nbsp
-		<button class="button1" onclick="window.location.href = 'https://github.com/itsAdityaDatta';">G<small>ITHUB</small> A<small>CCOUNT</small></button>&nbsp &nbsp &nbsp
-		
-		<button class="button1" onclick="window.location.href = 'https://www.hackerrank.com/itsAdityaDatta';">H<small>ACKER</small> R<small>ANK</small></button><br>
-		
-	</div><br><br><br>
-
-	<div class = 'bodiness35'></div>
-	<br><br>
-	<span id="projects" style="color: black;font-family: Impact;font-size: 70px;position: relative;top: 0;text-shadow: 0 0 2px white;z-index: 2;left: 528">P<small>ROJECTS</small>
-	</span>
-	<a href="https://www.youtube.com/watch?v=jClIMNR76lA">
-	<div class="projects">
-	  <img  style="float: right;position: relative;top: -40;left: 12;z-index: 2" src="ttt.png"  width="220" height="220">
-	  <span  style="font-size: 40px;position: relative;font-family: 'Abel';left: 6">T<small>IC</small> T<small>AC</small> T<small>OE</small></span>
-	  <br>
-	  &nbspMy first project: A two player, visually pleasing tic-tac-toe game.<br>&nbspMade entirely using the C language<br><br>
-	</div></a>
-
-	<br><br><br><br>
-	<a href="https://www.youtube.com/watch?v=qQ2BmME2PR4">
-	<div class="projectsEven"style="position: relative;top:-55">
-	  <img style="float: left;position: relative;top: -10;z-index: 2" src="web.png"  width="200" height="140">
-	  <span style="font-size: 40px;position: relative;font-family: 'Abel';">&nbspC<small>HOMP</small> G<small>AME</small> </span><br>
-	  &nbsp&nbsp&nbspA 2-player fun-to-play classic game named 'Chomp'<br>&nbsp&nbsp&nbspMade entirely in the C language.
-	  <br><br>
-	</div></a>
-
-	<br><br><br><br>
-	<a href="https://www.youtube.com/watch?v=44AagK0Jqsg">
-	<div class="projects" style="position: relative;top:-110">
-	  <img style="float: right;position: relative;top: -50;left: 12;z-index: 2;" src="poker.png"  width="220" height="220">
-	  <span style="font-size: 40px;position: relative;font-family: 'Abel';left: 6">P<small>OKER</small></span><br>
-	  &nbspA Poker Game simulation program, developed out of necessity. Keeps track of player names, chance, money etc. <br>&nbsp Simulates an actual poker game played amongst multiple players with commands such as Bet, Fold etc. (C language)<br><br>
-	</div></a>
-
-	<br><br><br><br>
-	<a href="https://www.youtube.com/watch?v=U1lwl-x7EtI">
-	<div class="projectsEven"style="position: relative;top:-160">
-	  <img style="float: left;position: relative;top: -30;z-index: 4" src="bank.png"  width="180" height="180">
-	  <span style="font-size: 40px;position: relative;font-family: 'Abel';">&nbsp&nbspV<small>IRTUAL</small> B<small>ANK</small> S<small>YSTEM</small></span><br>
-	  &nbsp&nbsp&nbsp&nbsp&nbspA Virtual Bank System (CRUD) made entirely in the C language with commands like<br> &nbsp&nbsp&nbsp&nbsp&nbspwithraw, deposit, transfer money system, a register-login system and much more!
-	  <br><br>
-	</div></a>
-	<br><br><br><br><br><br>
-	<a href="https://itsadityadatta.github.io/Sorting-Algorithm-Visualizer/">
-	<div class="projects" style="position: relative;top:-247">
-	  <img style="float: right;position: relative;top: -16;z-index: 4;right: -5;border: 1px solid black" src="sort.png"  width="190" height="160">
-	  <span style="font-size: 40px;position: relative;font-family: 'Abel';">&nbsp&nbspS<small>ORTING</small> A<small>LGO</small> V<small>ISUALIZER</small></span><br>
-	  &nbsp&nbsp&nbsp&nbsp&nbspA sorting-algorithms visualizer to fully understand the concepts of various sorting techniques<br>&nbsp&nbsp&nbsp&nbsp&nbspEquipped with a speed control bar.
-	</div></a>
-	<a href="https://itsadityadatta.github.io/DijktraAlgo/">
-	<div class="projectsEven"style="position: relative;top:-220;height: 140">
-	  <img style="float: left;position: relative;top: -15;border: 1px solid black;z-index: 4" src="spfa.png"  width="240" height="170">
-	  <span style="font-size: 40px;position: relative;font-family: 'Abel';">&nbsp&nbspS<small>HORTEST</small> P<small>ATH</small> F<small>INDING</small> A<small>LGORITHM</small></span><br>
-	  &nbsp&nbsp&nbsp&nbsp&nbspA Shortest Path finding program based on Dijkstra's algorithm<br>&nbsp&nbsp&nbsp&nbsp&nbspBuilt using HTML, CSS, BootStrap, Vanilla JS and P5.JS framework.<br>&nbsp&nbsp&nbsp&nbsp&nbspWith features such as a Grid system, make/erase walls commands and an UberPool type system.
-	  <br><br>
-	</div></a>
-
-
-	<span id="pInfo"></span>
-
-	<div class="bodiness4" style="position: relative;top:-72;z-index: 1"> </div><br>
-    <div class='botn1' id='botn1' onclick="func1()">
+<body>
+    <div class='navbar'></div>
+    <div class='buttons'>
+        <button class='buttons1' onclick="window.location.href ='#contact'">C<small>ONTACT</small></button>
+        <button class='buttons1' onclick="window.location.href = '#pInfo';";>T<small>ECHINICAL</small> I<small>NFO</small></button>
+        <button class='buttons1' onclick="window.location.href = '#projects';">P<small>ROJECTS</small></button>
     </div>
-    <div class='practise' onclick="func1()" >
-    </div> 
+    <div class='container'>
+        <div class='header1'></div>
+        <div class='header2'>
+            <div class='headImg'><img class='head' height ="150px" src="head.png"></div>
+            <div class='name'>A<small>DITYA</small> <small>DATT</small>A</span></div>
+        </div>
+        <div class='header34'>
+            <div class='header3'></div>
+            <div class='header4'><b>WebDeveloper, Competitive Coder</b></div>
+        </div>
+        <div class='loaderDiv'>
+            <div class="loader"></div>
+        </div>
+        <div class="header5">
+            <a class="buttons2" href='https://www.hackerearth.com/@aditya2132'">H<small>ACKER</small> E<small>ARTH</small></a>
+            <a class="buttons2" href='https://github.com/itsAdityaDatta'">G<small>ITHUB</small> A<small>CCOUNT</small></a>
+            <a class="buttons2" href='https://www.hackerrank.com/itsAdityaDatta'">H<small>ACKER</small> R<small>ANK</small></a><br>
+        </div>
+        <div class='projects'>
+            <div class='projectsHeading1' id='projects'></div>
+            <div class='projectsHeading2'>P<small>ROJECTS</small></div>
 
-	<div class="bodiness5" style="position: relative;top:-72;z-index: 2;text-align: center;">
-		<span style="color: black;font-family: Impact;font-size: 70px;position: relative;top:-86;text-shadow: 0 0 2px white;position: relative;left: 50;">T<small>ECHNICAL </small>S<small>TRENGTHS</small></span>
-		
-		<br><br><br>
+            <div class='projectsDiv'>
+                <a href="https://itsadityadatta.github.io/Sorting-Algorithm-Visualizer" >
+                    <div class='projectsOdd'>
+                        <div class='projectsTitle'>S<small>ORTING</small> A<small>LGORITHM</small> V<small>ISUALIZER</small></div>
+                        A sorting-algorithms visualizer to fully understand the concepts of various sorting techniques<br>Equipped with a speed-control bar and a voice-control system.
+                        <img class='projectsOddImg'src="sort.png"  width="190" height="160">
+                    </div>
+                </a>
+                <a href="https://itsadityadatta.github.io/DijktraAlgo">
+                    <div class='projectsEven' style="height: 120px;" >
+                        <img class='projectsEvenImg' src="spfa.png"  width="250" height="180">
+                        <div class='projectsTitle'>D<small>IJKSTRA'S</small> T<small>AXI</small>-S<small>YSTEM</small></div>
+                        Dijkstra's shortest PFA visualizer<br>With a Grid-marker system, make/erase walls commands and an UberPool type system. 
+                    </div>
+                </a>
+                <a href="https://itsadityadatta.github.io/K-Nearest-Neighbours">
+                    <div class='projectsOdd'>
+                        <div id='knnTitle' class='projectsTitle'>K-N<small>EAREST</small> N<small>EIGHBOURS</small></div>
+                        K nearest neighbors is an algorithm that stores all available cases,<br>and classifies new cases based on a similarity measure<br>KNN is used in statistical estimation and pattern recognition.
+                        <img style="transform: translate(10px,-140px);" class='projectsOddImg' src="knn.jpg"  width="230" height="190">
+                    </div>
+                </a>
+                <a href="https://rocky-refuge-96980.herokuapp.com">
+                    <div class='projectsEven' >
+                        <img class='projectsEvenImg' src="orange.png"  width="190" height="190" style="transform: translate(-50px,-37px); margin-right: -40px;">
+                        <div class='projectsTitle'>O<small>RANGE</small> <small>[ONGOING]</small></div>
+                        Orange is THE multipurpose forum you'll need. <br>With a post-views counter, register login system, post rating system and lots more!<br>[node, mongoDB, ExpressJS, EJS]
+                    </div>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="ts">
+            <div class='tsHeading1'></div>
+            <div class='tsHeading2'>T<small>ECHNICAL</small> S<small>TRENGTHS</small></div>
+            <div class='tsBackGround'>
+            <div class='tsColumnsContainer'>
+                <div class="column1">
+                    <img class='column1Img' src="code2.jpg">
+                    <div class='column1Heading'>Technical Strengths</div>
+                </div>
+                <div class="column2">
+                    <img class="column2Img" src="edu2.jpg">
+                    <div class='column2Heading'>Educational Qualifications</div>
+                </div>
+                <div class="column3">
+                    <img class="column3Img" src="chess.jpg">
+                    <div class='column3Heading'>Relevant Courses Done</div>
+                </div>
+            </div>
 
-		<div class="pInfoColumn" onmouseover="func2(0)" onmouseout="func3(0)">
-			<img class='pInfoImg' src="code2.jpg">
-			<div class='pInfoTitle'>Technical Strengths</div>
-			<ul style="position: relative;top: -36">
-				<li>C</li>
-				<li>C++</li>
-				<li>Python (basics)</li>
-				<li>HTML5</li>
-				<li>CSS</li> 
-				<li>Sass</li> 
-				<li>BootStrap</li>
-				<li>Javascript </li>
-				<li>jQuery</li>
-				<li>p5.JS</li>
-			</ul>
-		</div>
-		<div class="pInfoColumn" onmouseover="func2(1)" onmouseout="func3(1)">
-			<img class="pInfoImg" src="edu2.jpg" style="position: relative;">
-			<div class='pInfoTitle'>Educational Qualifications</div>
-			<ul style="position: relative;top: -36">
-				<li>NIT, SURAT :<br>&nbsp&nbspBachelor in Technology (2022)<br>&nbsp&nbspComputer Engineering<br>&nbsp&nbspCGPA: 8.0/10</li><hr style="width: 400px;position: relative;left: -100">
-				<li>CBSE Class X:<br>&nbsp&nbsp St. Paul's Sr. Sec. School, Kota<br>&nbsp&nbsp CGPA: 9.4/10</li>
-				<li style="position: relative;top: 10">CBSE Class XII:<br>&nbsp&nbsp SR. Public School, Kota<br>&nbsp&nbsp Percentage: 85%</li>
-			</ul>
-		<br></div>
-		<div class="pInfoColumn" onmouseover="func2(2)" onmouseout="func3(2)">
-			<img class="pInfoImg" src="chess.jpg">
-			<div class='pInfoTitle'>Relevant Courses Done</div>
-			<ul style="position: relative;top: -36">
-				<li>Fundamentals of Computer<br>Programming</li>
-				<li>Data Structures and Algorithms</li>
-				<li>Computer Organization <br>and Architecture</li>
-				<li> Database Management System*</li>
-				<li> Complete Web Development <br>BootCamp (UDEMY)*</li>
-				<li>Digital Circuits</li>
-				<li>Electrical Network Analysis</li>
-				<li>Differential Equations</li>
-			</ul><small>&nbsp* ongoing courses</small>
-		</div>
+        </div></div>
 
-	</div>
-
-
-
-	<br><br><br><br>
-	<br><br><br><br>
-	<br><br><br><br>
-	<div style="position: relative;top: -30" >
-	<div class = 'bodiness35' ></div><br><br>
-	<span id='contact' style="color: black;font-family: Impact;font-size: 70px;position: relative;top: 0;text-shadow: 0 0 2px white;z-index: 2;left: 528">C<small>ONTACT</small>
-	 M<small>E</small></span>
-	<div style="max-width: 1080;position: relative;zoom: 90%;margin-right: auto;margin-left: auto;">
-	
-	<div class="contact" >
-		<br><br>
-		<div style="background-color: #aaa; color: black; width: 78%;height: 270px;margin-left: 180;position: relative; ;top: 10;font-style: bold; border-radius: 5px;">
-			<span style="text-align: center;font-family: 'Abel';font-size: 32px;position: relative ;right: -260;top: 60"><span style="background-color: black; color: white; padding-right: 8px;padding-left:4px;border-radius: 8px">Email: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<small>adityaduttchowdhary@gmail.com</small></span></small><br><small>Whatsapp:</small> &nbsp&nbsp&nbsp&nbsp<small><small>91-8290908311</small></small><br><small>Phone:</small> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<small><small>91-6355421356</small></small><br><small>Instagram: </small>&nbsp&nbsp&nbsp&nbsp<small><small>@dattamarrgaya</small></small></span>
-			</div>
-
-		<div class="card" style="position: relative; z-index: 9;top: -275">
-			  <img src="adi2.jpg" alt="Aditya Datta" style="width:100%">
-			  <h1 style="font-family: 'Abel';font-size: 50px">Aditya Datta</h1>
-			  <p class="title">Computer Engineer</p>
-			  <p style="font-size: 18px">National Institute of Technology, Surat</p>
-			  <p style="background-color: black;width: 100%;color: white;font-size: 18px;height: 10%;margin:auto;z-index: 8;position: relative;z-index: 7;"><span style="position: relative;top: 5"> adityaduttchowdhary@gmail.com</span></p>
-			</div>
-			<div style="background-color: black; position: relative;z-index: 2;height:100;top: -455"></div>
-			<div style="height: 20;position: relative;top: -360"></div>
-</div>
-</div>
-</div>
+    </div>        
 
 </body>
 
