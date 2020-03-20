@@ -1,10 +1,42 @@
 <html>
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>  
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aditya Datta</title>
     <style type="text/css">
+
+        #overlay{
+		  position:fixed;
+		  z-index:99998;
+		  top:0;
+		  left:0;
+		  bottom:0;
+		  right:0;
+		  background:rgba(0,0,0,1);
+		}
+
+
+		#loader2 {
+			position:fixed;
+			z-index:99998;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			margin: auto;
+			border-radius: 100%;
+			border-left: 28px solid green;
+			border-top: 28px solid white;
+			border-right: 28px solid green;
+			border-bottom: 28px solid white;
+			width: 160px;
+			height: 160px;
+			-webkit-animation: spin 2s linear infinite;
+			animation: spin 2.5s linear infinite;
+		}
+
         html {
 		    scroll-behavior: smooth;
 		}
@@ -660,10 +692,19 @@
             }
         }
 
+        function load(){
+			setTimeout(function(){
+				document.getElementById('overlay').style.display = 'none';
+				document.getElementById('loader2').style.display = 'none';
+			},500);
+		}
+
     </script>
 </head>
 
-<body>
+<body onload="load()">    
+    <div id="overlay"> </div>
+    <div id='loader2' ></div>
     <div class='navbar'></div>
     <div class='buttons'>
         <button class='buttons1' onclick="window.location.href ='#contact'">C<small>ONTACT</small></button>
