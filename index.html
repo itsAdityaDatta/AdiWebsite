@@ -427,6 +427,18 @@
             background-color: #009900;
             transition-duration: 0.6s;
         }
+
+        .column1Div{
+            transition-duration: 0.6s;
+        }
+
+        .column2Div{
+            transition-duration: 0.6s;
+        }
+
+        .column3Div{
+            transition-duration: 0.6s;
+        }
         .ball{
         	zoom:0.7;
             background-color: #ffffff;
@@ -551,9 +563,10 @@
 
         .details{
             position: fixed;
+            left: 200px;
             font-family: 'Abel';
             font-size: 20px;
-            transform: translateY(30px) translateX(-270px);
+            transform: translateY(30px);
             text-align: right;
             border: 1px solid black;
             border-radius: 10px;
@@ -654,45 +667,51 @@
             else{
                 document.getElementById('ball').style.backgroundColor =  '#ffffff';
                 document.getElementById('ball').style.transform = 'translate(0px,-797px)';
-                document.getElementById('column1Img').style.height = '475px';
-                document.getElementById('column2Img').style.height = '475px';
-                document.getElementById('column3Img').style.height = '475px';
+                document.getElementById('column1Div').style.transform = 'translateY(0px)';
+                document.getElementById('column2Div').style.transform = 'translateY(0px)';
+                document.getElementById('column3Div').style.transform = 'translateY(0px)';
                 status = 0;
             }
         }
         function func1(){
             if(status == 0){
-                document.getElementById('column1Img').style.height = '200px';
+                document.getElementById("column1Div").style.transitionDuration = "0.6s";
+                document.getElementById('column1Div').style.transform = 'translateY(-275px)';
             }
         }
         
         function func2(){
             if(status == 0){
-                document.getElementById('column2Img').style.height = '200px';
+                document.getElementById("column2Div").style.transitionDuration = "0.6s";
+                document.getElementById('column2Div').style.transform = 'translateY(-275px)';
             }
         }
         
         function func3(){
             if(status == 0){
-                document.getElementById('column3Img').style.height = '200px';
+                document.getElementById("column3Div").style.transitionDuration = "0.6s";
+                document.getElementById('column3Div').style.transform = 'translateY(-275px)';
             }
         }
 
         function func4(){
             if(status == 0){
-                document.getElementById('column1Img').style.height = '475px';
+                document.getElementById("column1Div").style.transitionDuration = "0.6s";
+                document.getElementById('column1Div').style.transform = 'translateY(0px)';
             }
         }
 
         function func5(){
             if(status == 0){
-                document.getElementById('column2Img').style.height = '475px';
+                document.getElementById("column2Div").style.transitionDuration = "0.6s";
+                document.getElementById('column2Div').style.transform = 'translateY(0px)';
             }
         }
         
         function func6(){
             if(status == 0){
-                document.getElementById('column3Img').style.height = '475px';
+                document.getElementById("column3Div").style.transitionDuration = "0.6s";
+                document.getElementById('column3Div').style.transform = 'translateY(0px)';
             }
         }
 
@@ -771,49 +790,55 @@
         <br>
         <div class="ts">
             <div class='tsHeading1'></div>
-            <div class='tsHeading2' id='ts'>T<small>ECHNICAL</small> I<small>NFORMATION</small></div>
+            <div class='tsHeading2' id='ts'>T<small>ECHNICAL</small> S<small>TRENGTHS</small></div>
             <div class='tsBackGround'>
             <div class='tsColumnsContainer'>
                 <div class="column1" onmouseover="func1()" onmouseout="func4()">
-                    <img id='column1Img' class='column1Img' src="code2.jpg">
-                    <div class='column1Heading'>Technical Strengths</div>
-                    <ul class='change' style="font-size: 18px; padding-right: 5px;">
-                        <li>C</li>
-                        <li>C++</li>
-                        <li>Python</li>
-                        <li>HTML</li>
-                        <li>CSS, BootStrap</li> 
-                        <li>Javascript, jQuery, P5.js</li>
-                        <li>node</li>
-                        <li>ExpressJS, ejs</li>
-                        <li>webSockets, sockets.io</li>
-                        <li>mongoDB, SQL</li>
-                    </ul>
+                    <div id='column1Div'>
+                        <img id='column1Img' class='column1Img' src="code2.jpg">
+                        <div class='column1Heading'>Technical Strengths</div>
+                        <ul class='change' style="font-size: 18px; padding-right: 5px;">
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>HTML</li>
+                            <li>CSS, BootStrap</li> 
+                            <li>Javascript, jQuery, P5.js</li>
+                            <li>node</li>
+                            <li>ExpressJS, ejs</li>
+                            <li>webSockets</li>
+                            <li>mongoDB, SQL</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="column2" onmouseover="func2()" onmouseout="func5()">
-                    <img id='column2Img' class="column2Img" src="edu2.jpg">
-                    <div class='column2Heading'>Educational Qualifications</div>
-                    <ul class='change' style="font-size: 18px; padding-right:5px;">
-                        <li>NIT Surat, Bachelor in Technology (2022)</li>
-                        <li>Computer Engineering Branch</li>
-                        <li>CGPA : 7.82/10</li>
-                        <br>
-                        <li>CBSE Class X (CGPA : 9.4/10)</li>
-                        <li>CBSE Class XII (Percentage : 84%)</li>
-                    </ul>
+                    <div id='column2Div'>
+                        <img id='column2Img' class="column2Img" src="edu2.jpg">
+                        <div class='column2Heading'>Educational Qualifications</div>
+                        <ul class='change' style="font-size: 18px; padding-right:5px;">
+                            <li>NIT Surat, Bachelor in Technology (2022)</li>
+                            <li>Computer Engineering Branch</li>
+                            <li>CGPA : 7.82/10</li>
+                            <br>
+                            <li>CBSE Class X (CGPA : 9.4/10)</li>
+                            <li>CBSE Class XII (Percentage : 84%)</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="column3" onmouseover="func3()" onmouseout="func6()">
-                    <img id='column3Img' class="column3Img" src="chess.jpg">
-                    <div class='column3Heading'>Relevant Courses Done</div>
-                    <ul class='change' style="font-size: 18px; padding-right: 5px;">
-                        <li>Fundamentals of Computer Programming</li>
-                        <li>Data Structures and Algorithms</li>
-                        <li>Computer Organization and Architecture</li>
-                        <li>Database Management Systems</li>
-                        <li>Complete Web Dev BootCamp  (UDEMY)</li>
-                        <li>Digital Circuits</li>
-                        <li>Electrical Network Analysis</li>
-                    </ul>
+                    <div id='column3Div'>
+                        <img id='column3Img' class="column3Img" src="chess.jpg">
+                        <div class='column3Heading'>Relevant Courses Done</div>
+                        <ul class='change' style="font-size: 18px; padding-right: 5px;">
+                            <li>Fundamentals of Computer Programming</li>
+                            <li>Data Structures and Algorithms</li>
+                            <li>Computer Organization and Architecture</li>
+                            <li>Database Management Systems</li>
+                            <li>Complete Web Dev BootCamp  (UDEMY)</li>
+                            <li>Digital Circuits</li>
+                            <li>Electrical Network Analysis</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class='buttons3'onclick="func0()"></div>
